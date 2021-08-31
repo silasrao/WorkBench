@@ -7,7 +7,53 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="silas.apps.workbench.MainFragment"
+        android:name="silas.apps.workbench.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_editorFragment"
+            app:destination="@id/editorFragment" />
+        <argument
+            android:name="imageUri"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mainFragment_to_textFragment"
+            app:destination="@id/textFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_shapeFragment"
+            app:destination="@id/shapeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="silas.apps.workbench.ui.editor.EditorFragment"
+        android:label="fragment_editor"
+        tools:layout="@layout/fragment_editor" >
+        <action
+            android:id="@+id/action_editorFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
+        <argument
+            android:name="imageUri"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="silas.apps.workbench.ui.text.TextFragment"
+        android:label="text_fragment"
+        tools:layout="@layout/text_fragment" >
+        <action
+            android:id="@+id/action_textFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shapeFragment"
+        android:name="silas.apps.workbench.ui.shape.ShapeFragment"
+        android:label="shape_fragment"
+        tools:layout="@layout/shape_fragment" >
+        <action
+            android:id="@+id/action_shapeFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
 </navigation>

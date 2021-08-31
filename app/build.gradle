@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation "silas.libs:common:1.0"
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
